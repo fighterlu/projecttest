@@ -1,0 +1,7 @@
+{
+  "test_case/test_baidu_search.py::test_baidu_search[pytest-html]": true,
+  "test_case/test_baidu_search.py::test_baidu_search[pytest]": true,
+  "test_case/test_baidu_search.py::test_baidu_search[python]": true,
+  "test_case/test_baidu_search.py::test_baidu_search[selenium]": true,
+  "test_case/test_baidu_search.py::test_baidu_search[unittest]": true
+}

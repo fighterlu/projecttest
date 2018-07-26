@@ -1,0 +1,30 @@
+import unittest
+ 
+from time import sleep
+ 
+from appium import webdriver
+import desired_capabilities
+ 
+ 
+class ChromeTests(unittest.TestCase):
+    def setUp(self):
+        desired_caps = {
+            'platformName': 'Android',
+            'platformVersion': '4.2',
+            'deviceName': 'Android Emulator',
+            'browserName': 'Chrome'
+        }
+        self.driver = webdriver.Remote('http://localhost:xxx/wd/hub', desired_caps)
+ 
+    def tearDown(self):
+        self.driver.quit()
+ 
+    def test_find_single_element(self):
+        self.driver.get('http://xx.x.x.x:xxx/xxx/xxxx')
+        self.driver.find_element_by_link_text('i am a link').click()
+        self.assertTrue('I am some other page content' in self.driver.page_source)
+ 
+ 
+if __name__ == "__main__":
+    suite = unittest.TestLoader().loadTestsFromTestCase(ChromeTests)
+    unittest.TextTestRunner(verbosity=2).run(suite)
